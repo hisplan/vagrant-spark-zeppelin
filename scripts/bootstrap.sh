@@ -11,20 +11,27 @@ fi
 
 sudo rpm -ivh /vagrant/resources/jdk-8u45-linux-x64.rpm
 
-# install maven
-sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-sudo yum -y install apache-maven
-
-# install spark 1.5.1 pre-built for hadoop 2.4
-if [ ! -f "/vagrant/resources/spark-1.5.1-bin-hadoop2.4.tgz" ]
+# install spark 1.6.0 pre-built for hadoop 2.6
+if [ ! -f "/vagrant/resources/spark-1.6.0-bin-hadoop2.6.tgz" ]
 then
-	wget --progress=bar:force http://d3kbcqa49mib13.cloudfront.net/spark-1.5.1-bin-hadoop2.4.tgz
-	sudo cp spark-1.5.1-bin-hadoop2.4.tgz /vagrant/resources
+	wget --progress=bar:force http://ftp.wayne.edu/apache/spark/spark-1.6.0/spark-1.6.0-bin-hadoop2.6.tgz
+	sudo cp spark-1.6.0-bin-hadoop2.6.tgz /vagrant/resources
 fi
 
-sudo tar -zxf /vagrant/resources/spark-1.5.1-bin-hadoop2.4.tgz
-sudo chown -R vagrant:vagrant spark-1.5.1-bin-hadoop2.4
+sudo tar -zxf /vagrant/resources/spark-1.6.0-bin-hadoop2.6.tgz
+sudo chown -R vagrant:vagrant spark-1.6.0-bin-hadoop2.6
 
 # configure log4j
-sudo cp /vagrant/resources/log4j.properties /home/vagrant/spark-1.5.1-bin-hadoop2.4/conf
-sudo chown -R vagrant:vagrant spark-1.5.1-bin-hadoop2.4/conf/log4j.properties
+sudo cp /vagrant/resources/log4j.properties /home/vagrant/spark-1.6.0-bin-hadoop2.6/conf
+sudo chown -R vagrant:vagrant spark-1.6.0-bin-hadoop2.6/conf/log4j.properties
+
+
+# install zepplin 0.5.5
+if [ ! -f "" ]
+then    
+    wget --progress=bar:force http://mirrors.koehn.com/apache/incubator/zeppelin/0.5.5-incubating/zeppelin-0.5.5-incubating-bin-all.tgz
+    sudo cp zeppelin-0.5.5-incubating-bin-all.tgz /vagrant/resources
+fi
+
+sudo tar -zxf /vagrant/resources/zeppelin-0.5.5-incubating-bin-all.tgz
+sudo chown -R vagrant:vagrant zeppelin-0.5.5-incubating-bin-all
