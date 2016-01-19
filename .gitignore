@@ -1,0 +1,5 @@
+.vagrant
+job
+src
+resources/*.tgz
+resources/*.rpm
