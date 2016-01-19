@@ -5,13 +5,13 @@ Vagrant.configure(2) do |config|
   config.vm.network "private_network", ip: "172.31.0.150"
   config.vm.network "forwarded_port", guest: 8080, host: 8080
   config.vm.provider "virtualbox" do |vb|
-     vb.name = "spark-single-node"
+     vb.name = "spark-zepplin"
      vb.customize ["modifyvm", :id, "--memory", "1024"]
      vb.customize ["modifyvm", :id, "--usb", "off"]
      vb.customize ["modifyvm", :id, "--usbehci", "off"]
   end
 
-  config.vm.hostname = "spark-single-node"
+  config.vm.hostname = "spark-zepplin"
 
   config.vm.provision "shell", path: "./scripts/bootstrap.sh"
 
