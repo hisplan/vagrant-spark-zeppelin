@@ -20,7 +20,7 @@ fi
 
 sudo tar -zxf /vagrant/resources/spark-1.5.1-bin-hadoop2.6.tgz
 mv spark-1.5.1-bin-hadoop2.6 spark
-sudo chown -R vagrant:vagrant spark-1.5.1-bin-hadoop2.6
+sudo chown -R vagrant:vagrant spark
 
 # configure spark log4j
 sudo cp /vagrant/resources/log4j.properties /home/vagrant/spark/conf
@@ -35,15 +35,14 @@ then
 fi
 
 sudo tar -zxf /vagrant/resources/zeppelin-0.5.5-incubating-bin-all.tgz
-sudo chown -R vagrant:vagrant zeppelin-0.5.5-incubating-bin-all
+mv zeppelin-0.5.5-incubating-bin-all zeppelin
+sudo chown -R vagrant:vagrant zeppelin
 
 
 # configure zepplin environment
-
-sudo cp /vagrant/resources/zeppelin-env.sh /home/vagrant/zeppelin-0.5.5-incubating-bin-all/conf
+sudo cp /vagrant/resources/zeppelin-env.sh /home/vagrant/zeppelin/conf
 
 
 # run zepplin
-
-cd /home/vagrant/zeppelin-0.5.5-incubating-bin-all
+cd /home/vagrant/zeppelin
 bin/zeppelin-daemon.sh start
