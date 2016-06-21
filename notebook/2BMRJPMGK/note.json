@@ -1,0 +1,541 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sh\nmkdir -p /vagrant/data\nwget --quiet https://s3.amazonaws.com/danny-spark/query_log.txt.2015-10-19-00.log.zip -O /vagrant/data/query_log.txt.2015-10-19-00.log.zip\nls -l /vagrant/data",
+      "dateUpdated": "Jun 21, 2016 12:16:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466523401472_790321576",
+      "id": "20160621-113641_521989141",
+      "dateCreated": "Jun 21, 2016 11:36:41 AM",
+      "dateStarted": "Jun 21, 2016 12:16:19 PM",
+      "dateFinished": "Jun 21, 2016 12:16:26 PM",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\nsudo yum install unzip -y",
+      "dateUpdated": "Jun 21, 2016 12:16:34 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466523694349_-1800563838",
+      "id": "20160621-114134_385911088",
+      "dateCreated": "Jun 21, 2016 11:41:34 AM",
+      "dateStarted": "Jun 21, 2016 12:16:34 PM",
+      "dateFinished": "Jun 21, 2016 12:16:36 PM",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sh\ncd /vagrant/data\nunzip query_log.txt.2015-10-19-00.log.zip\nls -l /vagrant/data",
+      "dateUpdated": "Jun 21, 2016 12:16:40 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sh"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466523712141_1422508347",
+      "id": "20160621-114152_268728782",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "Archive:  query_log.txt.2015-10-19-00.log.zip\nreplace query_log.txt.2015-10-19-00.log? [y]es, [n]o, [A]ll, [N]one, [r]ename:  NULL\n(EOF or read error, treating as \"[N]one\" ...)\ntotal 390706\n-rwxrwxrwx 1 vagrant vagrant    461474 Feb 14  2012 bank.csv\n-rwxrwxrwx 1 vagrant vagrant   4610348 Feb 14  2012 bank-full.csv\n-rwxrwxrwx 1 vagrant vagrant      3864 Feb 14  2012 bank-names.txt\n-rwxrwxrwx 1 vagrant vagrant    579043 Jun 21 12:11 bank.zip\n-rwxrwxrwx 1 vagrant vagrant 325026591 Oct 19  2015 query_log.txt.2015-10-19-00.log\n-rwxrwxrwx 1 vagrant vagrant  69399598 Jun 21 12:16 query_log.txt.2015-10-19-00.log.zip\n"
+      },
+      "dateCreated": "Jun 21, 2016 11:41:52 AM",
+      "dateStarted": "Jun 21, 2016 12:16:40 PM",
+      "dateFinished": "Jun 21, 2016 12:16:40 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val data \u003d sc.textFile(\"/vagrant/data/query_log.txt.2015-10-19-00.log\")",
+      "dateUpdated": "Jun 21, 2016 12:16:42 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466444726102_-1830612157",
+      "id": "20160620-134526_1203555034",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "data: org.apache.spark.rdd.RDD[String] \u003d /vagrant/data/query_log.txt.2015-10-19-00.log MapPartitionsRDD[1] at textFile at \u003cconsole\u003e:29\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:45:26 PM",
+      "dateStarted": "Jun 21, 2016 12:16:42 PM",
+      "dateFinished": "Jun 21, 2016 12:16:45 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.count",
+      "dateUpdated": "Jun 21, 2016 12:16:47 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466444751314_-90130727",
+      "id": "20160620-134551_352567781",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "res1: Long \u003d 752110\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:45:51 PM",
+      "dateStarted": "Jun 21, 2016 12:16:47 PM",
+      "dateFinished": "Jun 21, 2016 12:16:52 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "data.take(5).foreach(println)",
+      "dateUpdated": "Jun 21, 2016 12:16:54 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466444761989_1659722595",
+      "id": "20160620-134601_458043473",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "*|1445227200104100002|10890|pub_zeropark_intl|116.105.74.96|tinthethao365|Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) coc_coc_browser/50.2.175 Chrome/44.2.2403.175 Safari/537.36|e-xml-41|VN|44|Hanoi|4|10|||3|500|2015-10-19 00:00:00|006|tinthethao365comvn|tinthethao365comvn||||-1||1|||231775562|{}|60575345||||10990|40544839||||2|1||||2|523626|*\n*|1445227200104100028|10890|pub_zeropark_intl|203.202.249.220|www|Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0|e-xml-41|BD|84|Chittagong|4|7|||3|500|2015-10-19 00:00:00|095|wwwuietpuchdacin|wwwuietpuchdacin||||-1||1|||220584364|{}|60575345||||10990|31090312||||2|1||||2|44912|*\n*|1445227200104100027|10890|pub_zeropark_intl|186.124.11.115|https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D3hhgjc6n8vc|Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/6.1.6 Safari/537.78.2|e-xml-41|AR|01|San Martin|14|3|||3|500|2015-10-19 00:00:00|095|youtubecom|youtubecom||||-1|234001000|1|||69318909|{}|60575345||||10990|202777||||2|5||||2|621934|*\n*|1445227200104100025|10890|pub_zeropark_intl|1.52.32.94|canthoinfo|Mozilla/5.0 (Windows NT 6.3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/46.0.2490.71 Safari/537.36|e-xml-41|VN|20|Ho Chi Minh City|4|7|||3|500|2015-10-19 00:00:00|086|canthoinfocom|canthoinfocom||||-1||1|||119144447|{}|60575345||||10990|1686482||||2|1||||2|140|*\n*|1445227200104100024|10890|pub_zeropark_intl|122.175.21.222|www|Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2535.0 Safari/537.36|e-xml-41|IN|02|Hyderabad|4|7|||3|500|2015-10-19 00:00:00|082|wwwgooglecoin|wwwgooglecoin||||-1||1|||83945330|{}|60575345||||10990|296079||||2|1||||4|80250|*\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:46:01 PM",
+      "dateStarted": "Jun 21, 2016 12:16:54 PM",
+      "dateFinished": "Jun 21, 2016 12:16:56 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "case class QueryLog(\n    queryId:String,\n    pubId:String,\n    pubName:String,\n    ip:String,\n    qt:String,\n    ua:String,\n    country:String\n)",
+      "dateUpdated": "Jun 21, 2016 12:16:58 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466444809221_2125112233",
+      "id": "20160620-134649_1469076458",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "defined class QueryLog\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:46:49 PM",
+      "dateStarted": "Jun 21, 2016 12:16:58 PM",
+      "dateFinished": "Jun 21, 2016 12:16:59 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "val queryLog \u003d data.map(s\u003d\u003es.split(\u0027|\u0027)).map(\n    q\u003d\u003eQueryLog(\n        q(1),   // queryId\n        q(2),   // pubId\n        q(3),   // pubName\n        q(4),   // ip\n        q(5),   // qt\n        q(6),   // ua\n        q(8)    // country\n    )\n)",
+      "dateUpdated": "Jun 21, 2016 12:17:02 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466444951259_-1515565750",
+      "id": "20160620-134911_892498533",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": "queryLog: org.apache.spark.rdd.RDD[QueryLog] \u003d MapPartitionsRDD[3] at map at \u003cconsole\u003e:33\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:49:11 PM",
+      "dateStarted": "Jun 21, 2016 12:17:02 PM",
+      "dateFinished": "Jun 21, 2016 12:17:03 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "queryLog.toDF.registerTempTable(\"FQL\")",
+      "dateUpdated": "Jun 21, 2016 12:17:05 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/scala"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466445141827_373038551",
+      "id": "20160620-135221_385879589",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TEXT",
+        "msg": ""
+      },
+      "dateCreated": "Jun 20, 2016 1:52:21 PM",
+      "dateStarted": "Jun 21, 2016 12:17:05 PM",
+      "dateFinished": "Jun 21, 2016 12:17:07 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect\ncountry,\ncount(*) as freq\nfrom FQL\ngroup by country\norder by freq desc\nlimit 7",
+      "dateUpdated": "Jun 21, 2016 12:22:19 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "country",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "freq",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "country",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {
+          "frequency": "40000"
+        },
+        "forms": {}
+      },
+      "jobName": "paragraph_1466445205018_-1040236105",
+      "id": "20160620-135325_517881662",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "country\tfreq\nUS\t347804\nVN\t69813\nIN\t45561\nRU\t35014\nBR\t18408\nMX\t16663\nCA\t16275\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:53:25 PM",
+      "dateStarted": "Jun 21, 2016 12:22:09 PM",
+      "dateFinished": "Jun 21, 2016 12:22:17 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%md\n# Dynamic Form?",
+      "dateUpdated": "Jun 21, 2016 12:22:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/markdown"
+      },
+      "settings": {
+        "params": {
+          "frequency": "1000"
+        },
+        "forms": {}
+      },
+      "jobName": "paragraph_1466526046839_1289312943",
+      "id": "20160621-122046_454507889",
+      "result": {
+        "code": "SUCCESS",
+        "type": "HTML",
+        "msg": "\u003ch1\u003eDynamic Form?\u003c/h1\u003e\n"
+      },
+      "dateCreated": "Jun 21, 2016 12:20:46 PM",
+      "dateStarted": "Jun 21, 2016 12:22:25 PM",
+      "dateFinished": "Jun 21, 2016 12:22:25 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect\ncountry,\ncount(*) as freq\nfrom FQL\ngroup by country\nhaving freq \u003e ${frequency\u003d1000}\norder by freq desc\nlimit 10",
+      "dateUpdated": "Jun 21, 2016 12:23:12 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "pieChart",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {
+          "frequency": "1000"
+        },
+        "forms": {
+          "frequency": {
+            "name": "frequency",
+            "defaultValue": "1000",
+            "hidden": false
+          }
+        }
+      },
+      "jobName": "paragraph_1466526095382_-1173251873",
+      "id": "20160621-122135_1831814021",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "country\tfreq\nUS\t347804\nVN\t69813\nIN\t45561\nRU\t35014\nBR\t18408\nMX\t16663\nCA\t16275\nID\t16065\nAU\t10810\nCN\t9401\n"
+      },
+      "dateCreated": "Jun 21, 2016 12:21:35 PM",
+      "dateStarted": "Jun 21, 2016 12:23:12 PM",
+      "dateFinished": "Jun 21, 2016 12:23:20 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "text": "%sql\nselect\npubName,\ncount(*) as cnt\nfrom FQL\nwhere\nua like \u0027%bot%\u0027\ngroup by pubName\norder by cnt desc\nlimit 100",
+      "dateUpdated": "Jun 21, 2016 12:20:25 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [
+            {
+              "name": "pubName",
+              "index": 0.0,
+              "aggr": "sum"
+            }
+          ],
+          "values": [
+            {
+              "name": "cnt",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          ],
+          "groups": [],
+          "scatter": {
+            "xAxis": {
+              "name": "pubName",
+              "index": 0.0,
+              "aggr": "sum"
+            },
+            "yAxis": {
+              "name": "cnt",
+              "index": 1.0,
+              "aggr": "sum"
+            }
+          }
+        },
+        "enabled": true,
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466445223506_2012392317",
+      "id": "20160620-135343_1842312433",
+      "result": {
+        "code": "SUCCESS",
+        "type": "TABLE",
+        "msg": "pubName\tcnt\npub_swoop_contextual\t5336\nengageya2_contextual\t378\npub_engageya\t331\nfilehippo_search_AFS\t206\npub_50onred_US_intext\t143\nbloomberg_search_US\t71\nadnu_us\t64\ngridspark_toolbar\t56\npub_igloo_directnav_intl\t16\nforbes_desktop_us\t13\npub_web_mydealhero\t11\npub_answers\t6\npub_kontera\t5\npub_intopicmedia_2011\t3\npub_ebay_adtag_US\t2\npub_bader\t2\npub_vibrantmedia\t1\npub_web_zipzipcode\t1\ncbsi_desktop_2\t1\npub_birdieone\t1\npub_iestates\t1\npub_web_myplanethero\t1\n"
+      },
+      "dateCreated": "Jun 20, 2016 1:53:43 PM",
+      "dateStarted": "Jun 21, 2016 12:20:25 PM",
+      "dateFinished": "Jun 21, 2016 12:20:33 PM",
+      "status": "FINISHED",
+      "progressUpdateIntervalMs": 500
+    },
+    {
+      "dateUpdated": "Jun 20, 2016 5:48:04 PM",
+      "config": {
+        "colWidth": 12.0,
+        "graph": {
+          "mode": "table",
+          "height": 300.0,
+          "optionOpen": false,
+          "keys": [],
+          "values": [],
+          "groups": [],
+          "scatter": {}
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "jobName": "paragraph_1466450398720_-1119586626",
+      "id": "20160620-151958_2065295031",
+      "dateCreated": "Jun 20, 2016 3:19:58 PM",
+      "dateStarted": "Jun 20, 2016 5:48:32 PM",
+      "dateFinished": "Jun 20, 2016 5:48:41 PM",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 500
+    }
+  ],
+  "name": "Query Log",
+  "id": "2BMRJPMGK",
+  "angularObjects": {
+    "2BMR6R5C5": [],
+    "2BP8ENF9M": [],
+    "2BQA47KY1": [],
+    "2BPNVR5QE": [],
+    "2BQ1XWV4Q": [],
+    "2BN48DST1": [],
+    "2BRR1V4W6": [],
+    "2BQK3X7WG": [],
+    "2BNY66DMP": [],
+    "2BPEGCPNS": [],
+    "2BN73TR5P": [],
+    "2BQ9X6GHB": [],
+    "2BMYTMBUD": [],
+    "2BREX69BW": []
+  },
+  "config": {
+    "looknfeel": "default"
+  },
+  "info": {}
+}
