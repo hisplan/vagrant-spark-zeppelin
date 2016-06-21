@@ -1,13 +1,13 @@
-vagrant-spark-zepplin
+vagrant-spark-zeppelin
 ===========================
 
 # 1. Introduction
 
-Vagrant project to spin up a single node Apache Spark 1.6.0 (pre-built for Apache Hadoop 2.6) and Apache Zepplin 0.5.5-incubating.
+Vagrant project to spin up a single node Apache Spark 1.6.1 (pre-built for Apache Hadoop 2.6) and Apache Zeppelin 0.5.6-incubating.
 
 # 2. Prerequisites
 
-1. At least 1GB memory in addition to the memory for your host machine.
+1. At least 2GB memory in addition to the memory for your host machine.
 2. Vagrant 1.7 or higher.
 3. VirtualBox 4.3.2 or higher.
 
@@ -23,7 +23,7 @@ Vagrant project to spin up a single node Apache Spark 1.6.0 (pre-built for Apach
 # 4. Note
 
 - The base box for CentOS 6.4 will be downloaded from http://wdev.qa.admarketplace.net.
-- If you run `vagrant up` for the very first time, Oracle JDK 8, Spark 1.6.0, Zepplin 0.5.5 will be automatically downloaded and installed, and copied to the `/resources` directory. Next time, when you run `vagrant up`, the files in the `/resources` directory will be used instead, which will make the boot-up time fast. In the future, these files will be included as part of the base box.
+- If you run `vagrant up` for the very first time, Oracle JDK 8, Spark 1.6.1, Zeppelin 0.5.6 will be automatically downloaded and installed, and copied to the `/resources` directory. Next time, when you run `vagrant up`, the files in the `/resources` directory will be used instead, which will make the boot-up time fast. In the future, these files will be included as part of the base box.
 - log4j log level is configured to WARN.
 - This uses Oracle JDK 8.
 - This comes with Python 2.6.x.
